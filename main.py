@@ -14,7 +14,7 @@ pokemon2 = []
 pokemon2.extend((pokemon.name.capitalize(), pokemon.types[0].type.name, pokemon.height, pokemon.weight, pokemon.base_experience, pokemon.stats[0].base_stat, pokemon.stats[1].base_stat, pokemon.stats[2].base_stat, pokemon.stats[3].base_stat, pokemon.stats[4].base_stat, pokemon.stats[5].base_stat, type.damage_relations.no_damage_to[0].name, type.damage_relations.half_damage_to[0].name, type.damage_relations.double_damage_to[0].name, type.damage_relations.no_damage_from[0].name, type.damage_relations.half_damage_from[0].name, type.damage_relations.double_damage_from[0].name))
 count = 0
 
-
+#hehe
 window = Tk()
 window.title("Pokemons")
 for x in rows:
