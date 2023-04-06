@@ -17,7 +17,7 @@ windowstart.mainloop()
 
 rows = ["Name: ", "Type: ", "Height: ", "Weight: ", "Base experience: ", "HP: ","Attack: ", "Defense: ", "Special attack:", "Special defense: ", "Speed: ", "No damage to: ", "Half damage to: ", "Double damage to: ", "No damage from: ", "Half damage from: ", "Double damage from: "]
 
-pokemon = pokemonPrvni
+pokemon = pb.pokemon(pokemonPrvni)
 
 """type = pb.type_(pokemon.types[0].type.name)"""
 
