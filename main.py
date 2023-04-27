@@ -2,7 +2,7 @@ import pokebase as pb
 from tkinter import *   
 import tkinter as tk
 
-rows = ["Name: ", "Type: ", "Height: ", "Weight: ", "Base experience: ", "HP: ","Attack: ", "Defense: ", "Special attack:", "Special defense: ", "Speed: "]
+rows = ["Name: ", "Type: ", "Height: ", "Weight: ", "Base experience: ", "HP: ","Attack: ", "Defense: ", "Special attack:", "Special defense: ", "Speed: ", "Chance of winning: "]
 
 root = Tk()
 root.geometry("600x400")
@@ -11,6 +11,16 @@ root.configure(bg='gray18')
 
 poke1_var=tk.StringVar()
 poke2_var=tk.StringVar()
+def getChance(x, y):
+    chance = 50
+    for i in range (2,10):
+        if x[i] > y[i]:
+            chance += 5
+        if x[i] < y[i]:
+            chance -= 5
+
+        
+    return chance
 
 def submit():
  
@@ -26,13 +36,19 @@ def submit():
     type = pb.type_(pokemon2.types[0].type.name)
     pokemonTwo = []
     pokemonTwo.extend((pokemon2.name.capitalize(), pokemon2.types[0].type.name, pokemon2.height, pokemon2.weight, pokemon2.base_experience, pokemon2.stats[0].base_stat, pokemon2.stats[1].base_stat, pokemon2.stats[2].base_stat, pokemon2.stats[3].base_stat, pokemon2.stats[4].base_stat, pokemon2.stats[5].base_stat))
+    
 
     """
     , "No damage to: ", "Half damage to: ", "Double damage to: ", "No damage from: ", "Half damage from: ", "Double damage from: "
     
     , type.damage_relations.no_damage_to[0].name, type.damage_relations.half_damage_to[0].name, type.damage_relations.double_damage_to[0].name, type.damage_relations.no_damage_from[0].name, type.damage_relations.half_damage_from[0].name, type.damage_relations.double_damage_from[0].name
     """
-
+    
+    chance = getChance(pokemonOne, pokemonTwo)
+    pokemonOne.append(chance)
+    chance = getChance(pokemonTwo, pokemonOne)
+    pokemonTwo.append(chance)
+    
     count = 0
     for x in rows:
         lbl = Label(root, text=rows[count], bg='gray18', fg='white')
