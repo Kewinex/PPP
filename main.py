@@ -81,7 +81,3 @@ poke2_entry.grid(row=1,column=1)
 sub_btn.grid(row=2,column=1)
 
 root.mainloop()
-
-
-
-
