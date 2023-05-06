@@ -13,7 +13,7 @@ poke1_var=tk.StringVar()
 poke2_var=tk.StringVar()
 def getChance(x, y):
     chance = 50
-    for i in range (2,11):
+    for i in range (2,12):
         if x[i] > y[i]:
             chance += 5
         if x[i] < y[i]:
